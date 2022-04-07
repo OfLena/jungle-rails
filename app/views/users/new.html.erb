@@ -1,0 +1,29 @@
+<!-- app/views/users/new.html.erb -->
+
+<h1>Signup!</h1>
+
+<div class="form-group">
+<%= form_for :user, url: '/users' do |f| %>
+
+  <ul class="no-bullets">
+  <li>
+  First Name: <%= f.text_field :first_name, :class=>"form-control"%>
+  </li>
+  <li>
+  Last Name: <%= f.text_field :last_name, :class=>"form-control"%>
+  </li>
+  <li>
+  Email: <%= f.text_field :email, :class=>"form-control"%>
+  </li>
+  <li>
+  Password: <%= f.password_field :password, :class=>"form-control"%>
+  </li>
+  <li>
+  Password Confirmation: <%= f.password_field :password_confirmation, :class=>"form-control"%>
+  </li>
+  
+  <%= f.submit "Submit", :class=>"btn btn-primary"  %>
+  
+</ul>
+<% end %>
+</div>
