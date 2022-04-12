@@ -52,8 +52,8 @@ RSpec.describe User, type: :model do
 
     it "it is not valid without a unique email" do
       @user1 = User.create!(first_name: 'Guy', last_name: 'Dilena', email: 'guy1dilena@gmail.com', password: 'password', password_confirmation: 'password')
-      @user.email = 'guy1dilena@gmail.com'
-      @user.valid?
+      @user.email = 'GUy1dilena@gmail.com'
+      expect(@user).to_not be_valid
       expect(@user.errors[:email]).to include("has already been taken")
     end
 
@@ -63,11 +63,40 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors[:password]).to include("is too short (minimum is 5 characters)")
     end
+  end
 
+
+  describe '.authenticate_with_credentials' do
+  
+    before(:each) do
+      @user = User.create!(first_name: 'Guy', last_name: 'Dilena', email: 'helloABC@gmail.com', password: 'password', password_confirmation: 'password')
     end
+
+
+    it "it should return nil if password doesn't match" do
+      user_test = User.authenticate_with_credentials('helloABC@gmail.com', 'passw')
+      expect(user_test).to be_nil
+    end
+
+    it "it should return nil if email doesn't match" do
+      user_test = User.authenticate_with_credentials('guilena11@gmail.com', 'password')
+      expect(user_test).to be_nil
+    end
+
+    it "it should return user if it authenticates" do 
+      user_test = User.authenticate_with_credentials('helloABC@gmail.com', 'password')
+      expect(user_test).to eq(@user)
+    end
+
+    it "it should pass with extra spaces" do
+      user_test = User.authenticate_with_credentials('     helloABC@gmail.com     ', 'password')
+      expect(user_test).to eq @user
+    end
+
+    it "it should pass no matter case sensitivity" do
+    user_test = User.authenticate_with_credentials('heLLOabc@gmail.com', 'password')
+    expect(user_test).to eq @user
+    end
+  
+  end
 end
-
-  # describe '.authenticate_with_credentials' do
-  #   # examples for this class method here
-  # end
-
