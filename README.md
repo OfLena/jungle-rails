@@ -42,5 +42,19 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-#### Screenshot Title
-!["Screenshot descrip"]()
+#### Homepage
+!["Homepage"](https://github.com/OfLena/jungle-rails/blob/master/docs/Homepage.png?raw=true)
+
+#### Checkout
+!["Checkout"](https://github.com/OfLena/jungle-rails/blob/master/docs/Checkout%20Cart.png?raw=true)
+
+#### Order Completion
+!["Order completion"](https://github.com/OfLena/jungle-rails/blob/master/docs/Order%20Completion.png?raw=true)
+
+#### Admin Authentification
+!["Admin login"](https://github.com/OfLena/jungle-rails/blob/master/docs/Admin%20Authentification.png?raw=true)
+
+#### Admin Add/Delete Products
+!["Admin capabilities"](https://github.com/OfLena/jungle-rails/blob/master/docs/Admin%20Add:Delete%20Products.png?raw=true)
+
+
