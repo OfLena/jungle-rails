@@ -31,3 +31,16 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## New Features
+
+- Added a Sold Out Badge to Product Cards to Show when Sold Out
+- Added Administration Login for Creating/Destroying Products/Categories
+- Added User Signup/Login Functionality
+- Added About Page
+- Added Categories Page to Admin Dashboard
+
+## Screenshots
+
+#### Screenshot Title
+!["Screenshot descrip"]()
